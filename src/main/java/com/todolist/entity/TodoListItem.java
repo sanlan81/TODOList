@@ -1,5 +1,7 @@
 package com.todolist.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +19,8 @@ public class TodoListItem {
     private Boolean completed;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "todo_list")
+    @JoinColumn(name = "todo_list_id")
+    @JsonBackReference
     private TodoList todoList;
 
     public Integer getId() {
