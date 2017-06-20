@@ -5,10 +5,11 @@ import com.todolist.service.TodoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/users/{id}/todolist")
+@RequestMapping("api/v1/users/todolist")
 @Api(value = "users todolist")
 public class TodoListController {
 
@@ -23,7 +24,7 @@ public class TodoListController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ApiOperation(value = "create todo list", httpMethod = "POST")
-    public void createTodoList(@PathVariable Integer id, @RequestBody TodoListBean todoListBean) {
-        todoService.createTodo(id, todoListBean);
+    public void createTodoList(Authentication authentication, @RequestBody TodoListBean todoListBean) {
+        todoService.createTodo(authentication.getName(), todoListBean.getTitleTodoList());
     }
 }

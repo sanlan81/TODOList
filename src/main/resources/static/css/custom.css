@@ -1,0 +1,47 @@
+
+.cont1{
+   max-width: 400px;
+   margin: 16px;
+  border: solid;
+}
+
+.header{
+  padding-left: 16px;
+  padding-right: 16px;
+  color: lightgrey;
+}
+
+.ul{
+
+}
+.classPadding{
+  padding: 16px;
+}
+
+.classSpan{
+  margin-right: 16px;
+  text-align: right;
+
+}
+
+.classRow{
+  margin-top: 16px;
+  padding: inherit;
+}
+
+.button{
+
+  background-color: #4CAF50;
+  border-radius: 2px;
+}
+
+.classInput{
+  border: solid lightgrey;
+  padding: 16px;
+}
+
+.classErrors{
+  color: red;
+}
+
+

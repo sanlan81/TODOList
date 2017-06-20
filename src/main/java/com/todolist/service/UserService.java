@@ -29,7 +29,11 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public User getUser(Integer id) {
-        return userRepository.findOne(id);
+    public User getUser(String name) {
+        /*UserRegistrationBean userRegistrationBean = new UserRegistrationBean();
+        User user = userRepository.findOneByFirstName(name);
+        userRegistrationBean.setFirstName(user.getFirstName());
+        userRegistrationBean.setPassword(user.getPassword());*/
+        return userRepository.findOneByFirstName(name);
     }
 }
