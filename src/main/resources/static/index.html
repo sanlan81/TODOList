@@ -9,9 +9,15 @@
 <body ng-app="myApp" ng-controller="todoCtrl">
 
 <h2>My Todo List</h2>
-<div ng-repeat="x in todoList">
-    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
-</div>
+
+<ul>
+    <li ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done">
+        {{x.title}}
+    </li>
+</ul>
+    <span ng-bind="x.todoText" ></span>
+
 <br>
 <form ng-submit="todoAdd()">
     <input type="text" ng-model="todoInput" size="50" placeholder="Add New">

@@ -3,15 +3,17 @@ angular.module('myApp')
 	return {
 		get: function() {
 			return $http.get('/api/v1/users/todolist');
-		}/*,
-
+		},
 		create: function(todoData) {
-			return $http.post('/api/todos', todoData);
+			return $http.post('/api/v1/users/todolist', todoData);
 		},
 
 		delete: function(id) {
-			return $http.delete('/api/todos/' + id);
-		},
+			return $http.delete('/api/v1/users/todolist/' + id);
+		}
+
+		/*,
+
 
 		update: function(todoData) {
 			return $http.put('/api/todos/' + todoData.id, todoData);

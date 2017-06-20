@@ -1,7 +1,8 @@
 package com.todolist.controller;
 
+import com.todolist.bean.TodoItemBean;
 import com.todolist.bean.TodoListBean;
-import com.todolist.entity.TodoList;
+import com.todolist.bean.TodoListTitleBean;
 import com.todolist.service.TodoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,9 +32,15 @@ public class TodoListController {
         todoService.createTodo(authentication.getName(), todoListBean.getTitleTodoList());
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    /*@RequestMapping(value = "", method = RequestMethod.GET)
     @ApiOperation(value = "get todo list Items", httpMethod = "GET")
     public List<TodoList> getTodoListItems(Authentication authentication) {
+        return todoService.getTodoItems(authentication.getName());
+    }*/
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    @ApiOperation(value = "get todo list Items", httpMethod = "GET")
+    public List<TodoItemBean> getTodoListItems(Authentication authentication) {
         return todoService.getTodoItems(authentication.getName());
     }
 
@@ -45,7 +52,7 @@ public class TodoListController {
 
     @RequestMapping(value = "/{todoItem}", method = RequestMethod.PUT)
     @ApiOperation(value = "mark todoItem", httpMethod = "PUT")
-    public void markTodoItem(Authentication authentication, @PathVariable Integer todoItem ){
-        todoService.markTodo(authentication.getName(), todoItem);
+    public void markTodoItem(Authentication authentication, @PathVariable Integer todoItem , @RequestBody TodoListTitleBean todoListTitleBean){
+        todoService.markTodo(authentication.getName(), todoItem, todoListTitleBean);
     }
 }
