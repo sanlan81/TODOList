@@ -7,6 +7,8 @@ import com.todolist.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TodoService {
 
@@ -29,8 +31,32 @@ public class TodoService {
 
         TodoList todoList = new TodoList();
         todoList.setTitle(todoListBean);
+        todoList.setCompleted(false);
         todoList.setUser(user);
 
         todoListRepository.save(todoList);
+    }
+
+    public List<TodoList> getTodoItems(String name) {
+
+        User user = userRepository.findOneByFirstName(name);
+       return user.getTodoList();
+    }
+
+    public void deleteTodo(String name, Integer todoListId) {
+        userService.getUser(name);
+
+        TodoList todo = todoListRepository.findOne(todoListId);
+        if (todo.getCompleted()){
+            todoListRepository.delete(todoListId);
+        }
+    }
+
+    public void markTodo(String name, Integer todoItem) {
+
+        userService.getUser(name);
+        TodoList todo = todoListRepository.findOne(todoItem);
+        todo.setCompleted(true);
+        todoListRepository.save(todo);
     }
 }

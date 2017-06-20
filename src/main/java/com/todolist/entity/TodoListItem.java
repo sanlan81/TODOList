@@ -1,9 +1,6 @@
 package com.todolist.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import javax.persistence.*;
-
+/*
 @Entity
 @Table(name = "todo_list_item")
 public class TodoListItem {
@@ -54,4 +51,4 @@ public class TodoListItem {
     public void setTodoList(TodoList todoList) {
         this.todoList = todoList;
     }
-}
+}*/
