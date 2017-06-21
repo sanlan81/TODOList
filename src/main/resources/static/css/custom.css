@@ -1,47 +1,61 @@
-
-.cont1{
-   max-width: 400px;
-   margin: 16px;
-  border: solid;
+.form-container {
+  margin-bottom: 0;
+  margin-left: 260px;
+  margin-top: 100px;
+  padding-bottom: 24px;
+  padding-left: 141px;
+  padding-right: 14px;
+  width: 560px;
 }
 
-.header{
-  padding-left: 16px;
-  padding-right: 16px;
-  color: lightgrey;
+
+.body{
+  font-family: "Lucida Console";
 }
 
-.ul{
 
-}
-.classPadding{
-  padding: 16px;
-}
-
-.classSpan{
-  margin-right: 16px;
-  text-align: right;
-
+.page-header .actions .btn {
+  margin-top: 10px;
+  font-size: 17px;
+  font-family: monospace;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
-.classRow{
-  margin-top: 16px;
-  padding: inherit;
+.page-header {
+  margin: 0;
+  background: seagreen;
+  border-radius: 8px;
 }
 
-.button{
-
-  background-color: #4CAF50;
-  border-radius: 2px;
+.page-header .logo {
+  color: #b1b1b1;
+  font-family: cursive;
+  font-size: 28px;
+  margin-bottom: 77px;
+  text-align: center;
 }
 
-.classInput{
-  border: solid lightgrey;
-  padding: 16px;
+.page-footer {
+  height: 60px;
+  background-color: #e7e7e7;
+  margin-top: 62px;
+  border-radius: 8px;
 }
 
-.classErrors{
-  color: red;
+.footer-content {
+  color: seagreen;
+  font-family: cursive;
+  font-size: 20px;
+  padding-top: 1px;
+  text-align: center;
 }
+
+.loginHeader{
+  margin-bottom: 50px;
+}
+
+
 
 

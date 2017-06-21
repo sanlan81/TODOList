@@ -4,7 +4,6 @@ package com.todolist.service;
 import com.todolist.bean.UserRegistrationBean;
 import com.todolist.entity.User;
 import com.todolist.repository.UserRepository;
-import ma.glasnost.orika.MapperFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,28 +11,21 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final MapperFacade mapperFacade;
-
 
     @Autowired
-    public UserService(UserRepository userRepository, MapperFacade mapperFacade) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.mapperFacade = mapperFacade;
+
     }
 
     public void createUser(UserRegistrationBean userRegistrationBean) {
         User user = new User();
         user.setFirstName(userRegistrationBean.getFirstName());
         user.setPassword(userRegistrationBean.getPassword());
-        //User user = mapperFacade.map(userRegistrationBean, User.class);
         userRepository.save(user);
     }
 
     public User getUser(String name) {
-        /*UserRegistrationBean userRegistrationBean = new UserRegistrationBean();
-        User user = userRepository.findOneByFirstName(name);
-        userRegistrationBean.setFirstName(user.getFirstName());
-        userRegistrationBean.setPassword(user.getPassword());*/
         return userRepository.findOneByFirstName(name);
     }
 }

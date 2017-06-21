@@ -20,28 +20,6 @@ public class TodoList {
     @JsonBackReference
     private User user;
 
-    @Column(name = "completed")
-    private Boolean completed;
-
-    public Boolean getCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(Boolean completed) {
-        this.completed = completed;
-    }
-
-/*    @OneToMany(mappedBy = "todoList", fetch = FetchType.LAZY)
-    private List<TodoListItem> todoListItems;
-
-    public List<TodoListItem> getTodoListItems() {
-        return todoListItems;
-    }
-
-    public void setTodoListItems(List<TodoListItem> todoListItems) {
-        this.todoListItems = todoListItems;
-    }*/
-
     public Integer getId() {
         return id;
     }
@@ -65,7 +43,6 @@ public class TodoList {
     public void setUser(User user) {
         this.user = user;
     }
-
 
 }
 

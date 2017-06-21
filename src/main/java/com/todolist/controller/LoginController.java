@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")
 public class LoginController {
-
-
-    /*@RequestMapping(value = {"/"}, method = RequestMethod.GET)
+/*
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String login(ModelMap model) {
 
         return "login";
@@ -22,7 +21,7 @@ public class LoginController {
     @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
     public String loginGood(ModelMap model) {
 
-        return "redirect:http://localhost:8080/swagger-ui.html";
+        return "redirect:/";
     }*/
 
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)

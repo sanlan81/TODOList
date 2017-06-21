@@ -3,8 +3,7 @@ package com.todolist.bean;
 
 public class TodoItemBean {
 
-    String title ;
-    Boolean completed;
+    String title;
     Integer id;
 
     public Integer getId() {
@@ -13,14 +12,6 @@ public class TodoItemBean {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Boolean getCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(Boolean completed) {
-        this.completed = completed;
     }
 
     public String getTitle() {
