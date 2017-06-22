@@ -27,8 +27,8 @@ public class TodoListController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ApiOperation(value = "create todo list", httpMethod = "POST")
-    public TodoListBean createTodoList(Authentication authentication, @RequestBody TodoListBean todoListBean) {
-        return todoService.createTodo(authentication.getName(), todoListBean.getTitleTodoList());
+    public TodoItemBean createTodoList(Authentication authentication, @RequestBody TodoListBean todoListBean) {
+        return todoService.createTodo(authentication.getName(), todoListBean.getTitle());
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)

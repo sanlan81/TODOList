@@ -1,7 +1,6 @@
 package com.todolist.service;
 
 import com.todolist.bean.TodoItemBean;
-import com.todolist.bean.TodoListBean;
 import com.todolist.entity.TodoList;
 import com.todolist.entity.User;
 import com.todolist.repository.TodoListRepository;
@@ -28,7 +27,7 @@ public class TodoService {
         this.mapperFacade = mapperFacade;
     }
 
-    public TodoListBean createTodo(String name, String todoListBean) {
+    public TodoItemBean createTodo(String name, String todoListBean) {
 
         User user = userRepository.findOneByFirstName(name);
 
@@ -37,7 +36,7 @@ public class TodoService {
         todoList.setUser(user);
 
         todoListRepository.save(todoList);
-        return mapperFacade.map(todoList, TodoListBean.class);
+        return mapperFacade.map(todoList, TodoItemBean.class);
     }
 
     public List<TodoItemBean> getTodoItems(String name) {

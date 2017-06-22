@@ -3,8 +3,8 @@ package com.todolist.bean;
 
 public class TodoItemBean {
 
-    String title;
     Integer id;
+    String title;
 
     public Integer getId() {
         return id;

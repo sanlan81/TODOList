@@ -8,11 +8,9 @@
   width: 560px;
 }
 
-
-.body{
+.body {
   font-family: "Lucida Console";
 }
-
 
 .page-header .actions .btn {
   margin-top: 10px;
@@ -52,10 +50,23 @@
   text-align: center;
 }
 
-.loginHeader{
-  margin-bottom: 50px;
+.loginHeader {
+  margin-bottom: 29px;
 }
 
+.loginContainer {
+  width: 560px;
+}
 
+.customContainer {
+  margin-left: 290px;
+  width: 666px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 16px;
+  margin-left: 130px;
+}
 
 

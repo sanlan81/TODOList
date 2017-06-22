@@ -13,8 +13,8 @@
 
 <div class="form-container">
     <div ng-include="'app/views/header.html'"></div>
-    <div class="row" >
-            <ul>
+    <div class="row">
+        <ul>
             <li class="body" ng-repeat="x in todoList">
                 <h2>
                     <input type="checkbox" ng-model="x.marked">
@@ -29,6 +29,7 @@
             <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
             <input type="submit" value="Add New">
         </form>
+        <p class="error">{{errortext}}</p>
         <p>
             <button ng-click="remove()">Remove marked</button>
         </p>

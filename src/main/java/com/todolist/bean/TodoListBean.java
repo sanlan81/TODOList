@@ -3,22 +3,13 @@ package com.todolist.bean;
 
 public class TodoListBean {
 
-    private Integer id;
-    private String titleTodoList;
+    private String title;
 
-    public Integer getId() {
-        return id;
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitleTodoList() {
-        return titleTodoList;
-    }
-
-    public void setTitleTodoList(String titleTodoList) {
-        this.titleTodoList = titleTodoList;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

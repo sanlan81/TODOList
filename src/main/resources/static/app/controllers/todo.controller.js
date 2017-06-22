@@ -8,20 +8,29 @@ angular.module("myApp")
             $scope.todoList = response.statusText;
         });
 
-        $scope.todoAdd = function () {
 
-            Todolist.create({titleTodoList: $scope.todoInput})
+        $scope.todoAdd = function () {
+            debugger;
+
+            Todolist.create({title: $scope.todoInput})
                 .then(function (response) {
-                    console.log($scope.todoList);
-                    console.log(response);
-                    $scope.todoList.push({id:response.id, title: response.titleTodoList, marked: false});
-                    console.log($scope.todoList);
+                    $scope.todoList.push({id: response.data.id, title: response.data.title, marked: false});
                 });
 
-           /* $scope.todoList.push({title: $scope.todoInput, marked: false});
-            Todolist.create({titleTodoList: $scope.todoInput});*/
             $scope.todoInput = "";
         };
+
+        /*  /*
+         $scope.errortext = "";
+         Todolist.create({title: $scope.todoInput});
+         if (!$scope.todoInput) {return;}
+         if($scope.todoList.indexOf(todoInput) == -1) {
+         $scope.todoList.push({title: $scope.todoInput, marked: false});
+         }else {
+         return $scope.errortext ="The item is already in your todo list.";
+         }
+         $scope.todoInput = "";*/
+
 
         $scope.remove = function () {
             var oldList = $scope.todoList;
