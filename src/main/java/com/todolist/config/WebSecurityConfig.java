@@ -2,15 +2,14 @@ package com.todolist.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
-//@EnableWebSecurity
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
@@ -24,12 +23,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/admin*").access("hasRole('USER')")
-                //.and().formLogin()
+                .and().formLogin()
                 .and().exceptionHandling().accessDeniedPage("/Access_Denied");
 
         http.formLogin()
                 .loginPage("/login.html")
-                //.failureUrl("/login?error")
+                .failureUrl("/login.html?error")
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .permitAll();
@@ -46,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.logout()
                 .permitAll()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout")
+                .logoutSuccessUrl("/login.html?logout")
                 .invalidateHttpSession(true);
     }
 }

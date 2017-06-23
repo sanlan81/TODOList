@@ -4,13 +4,9 @@
 <!-- load bootstrap -->
 <link rel="stylesheet" value="css/bootstrap.css"/>
 <link rel="stylesheet" href="css/custom.css">
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-
 <body ng-app="myApp" ng-controller="todoCtrl">
-
-
 <div class="form-container">
     <div ng-include="'app/views/header.html'"></div>
     <div class="row">
@@ -23,25 +19,20 @@
             </li>
         </ul>
         <span ng-bind="x.todoText"></span>
-
         <br>
         <form ng-submit="todoAdd()">
             <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
             <input type="submit" value="Add New">
         </form>
-        <p class="error">{{errortext}}</p>
         <p>
             <button ng-click="remove()">Remove marked</button>
         </p>
-
     </div>
     <div ng-include="'app/views/footer.html'"></div>
 </div>
-
 
 <script src="app/app.js"></script>
 <script src="app/controllers/todo.controller.js"></script>
 <script src="app/services/todo.service.js"></script>
 </body>
-
 </html>

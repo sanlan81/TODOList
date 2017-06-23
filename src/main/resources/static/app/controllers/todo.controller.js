@@ -20,18 +20,6 @@ angular.module("myApp")
             $scope.todoInput = "";
         };
 
-        /*  /*
-         $scope.errortext = "";
-         Todolist.create({title: $scope.todoInput});
-         if (!$scope.todoInput) {return;}
-         if($scope.todoList.indexOf(todoInput) == -1) {
-         $scope.todoList.push({title: $scope.todoInput, marked: false});
-         }else {
-         return $scope.errortext ="The item is already in your todo list.";
-         }
-         $scope.todoInput = "";*/
-
-
         $scope.remove = function () {
             var oldList = $scope.todoList;
             $scope.todoList = [];
